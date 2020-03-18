@@ -133,6 +133,13 @@ const CreatArticale = banana => {
   article.appendChild(paragraph3);
   article.appendChild(button);
 
+  headline.textContent = title;
+  day.textContent = date;
+  content1.textContent = firstParagraph;
+  content2.textContent = secondParagraph;
+  content3.textContent = thirdParagraph;
+  button.textContent = "button";
+
   button.addEventListener("click", () => {
     article.classList.toggle("article-open");
   });
@@ -145,8 +152,25 @@ const CreatArticale = banana => {
 //     theList.textContent = item;
 //     list.append(theList);
 //   });
-const theArtical;
-  banana.forEach(item => {
-    theArtical = document.createElement("artical")
-    theArtical.textContent = item;
+// const theArtical;
+//   banana.forEach(item => {
+//     theArtical = document.createElement("artical")
+//     theArtical.textContent = item;
+// this is how it was, but becouse i have prettier so it's organize it for me
+// const articles = document.querySelector('.articles');
+// data.forEach(data =>{
+//   articles.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+
+// });
+const articles = document.querySelector(".articles");
+data.forEach(data => {
+  articles.appendChild(
+    createArticle(
+      data.title,
+      data.date,
+      data.firstParagraph,
+      data.secondParagraph,
+      data.thirdParagraph
+    )
+  );
 });
