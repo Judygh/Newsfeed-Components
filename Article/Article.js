@@ -138,3 +138,15 @@ const CreatArticale = banana => {
   });
   return article;
 };
+
+// let theList;
+//   menus.forEach(item => {
+//     theList = document.createElement("li");
+//     theList.textContent = item;
+//     list.append(theList);
+//   });
+const theArtical;
+  banana.forEach(item => {
+    theArtical = document.createElement("artical")
+    theArtical.textContent = item;
+});
