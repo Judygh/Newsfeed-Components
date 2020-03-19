@@ -112,39 +112,46 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
-const CreatArticale = banana => {
+function CreateArticle(
+  title,
+  date,
+  firstParagraph,
+  secondParagraph,
+  thirdParagraph,
+  button
+) {
   const article = document.createElement("div");
-  const title = document.createElement("h2");
-  const date = document.createElement("p");
-  const paragraph1 = document.createElement("p");
-  const paragraph2 = document.createElement("p");
-  const paragraph3 = document.createElement("p");
-  const button = document.createElement("span");
+  const titles = document.createElement("h2");
+  const dates = document.createElement("p");
+  const firstParagraphs = document.createElement("p");
+  const secondParagraphs = document.createElement("p");
+  const thirdParagraphs = document.createElement("p");
+  const buttons = document.createElement("span");
 
-  article.classList.add("artical");
-  date.classList.add("date");
-  button.classList.add("expandButton");
+  article.classList.add("article");
+  buttons.classList.add("expandButton");
+  dates.classList.add("date");
 
-  article.appendChild();
-  article.appendChild(title);
-  article.appendChild(date);
-  article.appendChild(paragraph1);
-  article.appendChild(paragraph2);
-  article.appendChild(paragraph3);
-  article.appendChild(button);
+  // article.appendChild();
+  article.appendChild(titles);
+  article.appendChild(dates);
+  article.appendChild(firstParagraphs);
+  article.appendChild(secondParagraphs);
+  article.appendChild(thirdParagraphs);
+  article.appendChild(buttons);
 
-  headline.textContent = title;
-  day.textContent = date;
-  content1.textContent = firstParagraph;
-  content2.textContent = secondParagraph;
-  content3.textContent = thirdParagraph;
-  button.textContent = "button";
+  titles.textContent = title;
+  dates.textContent = date;
+  firstParagraphs.textContent = firstParagraph;
+  secondParagraphs.textContent = secondParagraph;
+  thirdParagraphs.textContent = thirdParagraph;
+  buttons.textContent = "expand";
 
-  button.addEventListener("click", () => {
+  buttons.addEventListener("click", () => {
     article.classList.toggle("article-open");
   });
   return article;
-};
+}
 
 // let theList;
 //   menus.forEach(item => {
@@ -157,20 +164,85 @@ const CreatArticale = banana => {
 //     theArtical = document.createElement("artical")
 //     theArtical.textContent = item;
 // this is how it was, but becouse i have prettier so it's organize it for me
+
 // const articles = document.querySelector('.articles');
 // data.forEach(data =>{
 //   articles.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
-
 // });
+
 const articles = document.querySelector(".articles");
-data.forEach(data => {
+data.forEach(item => {
   articles.appendChild(
-    createArticle(
-      data.title,
-      data.date,
-      data.firstParagraph,
-      data.secondParagraph,
-      data.thirdParagraph
+    CreateArticle(
+      item.title,
+      item.date,
+      item.firstParagraph,
+      item.secondParagraph,
+      item.thirdParagraph
     )
   );
 });
+
+// const createArticle = banana => {
+//   const article = document.createElement("div");
+//   const title = document.createElement("h2");
+//   const date = document.createElement("p");
+//   const firstParagraph = document.createElement("p");
+//   const secondParagraph = document.createElement("p");
+//   const thirdParagraph = document.createElement("p");
+//   const button = document.createElement("span");
+
+//   article.classList.add("article");
+//   button.classList.add("expandButton");
+//   dates.classList.add("date");
+
+//   // article.appendChild();
+//   article.appendChild(banana.title);
+//   article.appendChild(banana.date);
+//   article.appendChild(banana.firstParagraph);
+//   article.appendChild(banana.secondParagraph);
+//   article.appendChild(banana.thirdParagraph);
+//   article.appendChild(banana.button);
+
+//   title.textContent = banana.title;
+//   date.textContent = banana.date;
+//   firstParagraph.textContent = banana.firstParagraph;
+//   secondParagraph.textContent = banana.secondParagraph;
+//   thirdParagraph.textContent = banana.thirdParagraph;
+//   button.textContent = "expand";
+
+//   button.addEventListener("click", () => {
+//     article.classList.toggle("article-open");
+//   });
+//   return article;
+// };
+
+// // let theList;
+// //   menus.forEach(item => {
+// //     theList = document.createElement("li");
+// //     theList.textContent = item;
+// //     list.append(theList);
+// //   });
+// // const theArtical;
+// //   banana.forEach(item => {
+// //     theArtical = document.createElement("artical")
+// //     theArtical.textContent = item;
+// // this is how it was, but becouse i have prettier so it's organize it for me
+
+// // const articles = document.querySelector('.articles');
+// // data.forEach(data =>{
+// //   articles.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+// // });
+
+// const articles = document.querySelector(".articles");
+// data.forEach(item => {
+//   articles.appendChild(
+//     createArticle(
+//       item.title,
+//       item.date,
+//       item.firstParagraph,
+//       item.secondParagraph,
+//       item.thirdParagraph
+//     )
+//   );
+// });
