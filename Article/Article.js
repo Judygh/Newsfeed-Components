@@ -3,7 +3,7 @@
 const data = [
   {
     title: 'Lambda School Students: "We\'re the best!"',
-    date: 'Nov 5th, 2018',
+    date: "Nov 5th, 2018",
     firstParagraph: `Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
         moff wicket tatooine luke.Solo wampa wampa calrissian yoda moff.Darth grievous darth gonk darth hutt.Darth baba skywalker
         watto fett jango maul han.Mon ewok sidious sidious lando kenobi grievous gamorrean solo.Yoda wedge utapau darth calamari.
@@ -23,8 +23,8 @@ const data = [
         moff calamari mon obi-wan. Solo grievous lando coruscant. Jinn darth palpatine obi-wan mon.`
   },
   {
-    title: 'Javascript and You, ES6',
-    date: 'May 7th, 2019',
+    title: "Javascript and You, ES6",
+    date: "May 7th, 2019",
     firstParagraph: `Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost
         Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot
         snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 ¾ dress robes I must not tell lies. Mudbloods
@@ -43,8 +43,8 @@ const data = [
         sing above the ground, Ginny Weasley bright red. Fanged frisbees, phoenix tears good clean match.`
   },
   {
-    title: 'React vs Angular vs Vue',
-    date: 'June 7th, 2019',
+    title: "React vs Angular vs Vue",
+    date: "June 7th, 2019",
     firstParagraph: `Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ivysaur Lorem ipsum dolor sit amet, consectetur adipiscing
         elit. Venusaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charmander Lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Charmeleon Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charizard Lorem ipsum dolor sit amet,
@@ -71,8 +71,8 @@ const data = [
         Castform Lotad the power that's inside Burnt Berry Makuhita. Ghost Ariados Corphish Dusclops Golbat Gligar Zweilous.`
   },
   {
-    title: 'Professional Software Development in 2019',
-    date: 'Jan 1st, 2019',
+    title: "Professional Software Development in 2019",
+    date: "Jan 1st, 2019",
     firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
           hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
           Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
@@ -112,3 +112,137 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+function CreateArticle(
+  title,
+  date,
+  firstParagraph,
+  secondParagraph,
+  thirdParagraph,
+  button
+) {
+  const article = document.createElement("div");
+  const titles = document.createElement("h2");
+  const dates = document.createElement("p");
+  const firstParagraphs = document.createElement("p");
+  const secondParagraphs = document.createElement("p");
+  const thirdParagraphs = document.createElement("p");
+  const buttons = document.createElement("span");
+
+  article.classList.add("article");
+  buttons.classList.add("expandButton");
+  dates.classList.add("date");
+
+  // article.appendChild();
+  article.appendChild(titles);
+  article.appendChild(dates);
+  article.appendChild(firstParagraphs);
+  article.appendChild(secondParagraphs);
+  article.appendChild(thirdParagraphs);
+  article.appendChild(buttons);
+
+  titles.textContent = title;
+  dates.textContent = date;
+  firstParagraphs.textContent = firstParagraph;
+  secondParagraphs.textContent = secondParagraph;
+  thirdParagraphs.textContent = thirdParagraph;
+  buttons.textContent = "expand";
+
+  buttons.addEventListener("click", () => {
+    article.classList.toggle("article-open");
+  });
+  return article;
+}
+
+// let theList;
+//   menus.forEach(item => {
+//     theList = document.createElement("li");
+//     theList.textContent = item;
+//     list.append(theList);
+//   });
+// const theArtical;
+//   banana.forEach(item => {
+//     theArtical = document.createElement("artical")
+//     theArtical.textContent = item;
+// this is how it was, but becouse i have prettier so it's organize it for me
+
+// const articles = document.querySelector('.articles');
+// data.forEach(data =>{
+//   articles.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+// });
+
+const articles = document.querySelector(".articles");
+data.forEach(item => {
+  articles.appendChild(
+    CreateArticle(
+      item.title,
+      item.date,
+      item.firstParagraph,
+      item.secondParagraph,
+      item.thirdParagraph
+    )
+  );
+});
+
+// const createArticle = banana => {
+//   const article = document.createElement("div");
+//   const title = document.createElement("h2");
+//   const date = document.createElement("p");
+//   const firstParagraph = document.createElement("p");
+//   const secondParagraph = document.createElement("p");
+//   const thirdParagraph = document.createElement("p");
+//   const button = document.createElement("span");
+
+//   article.classList.add("article");
+//   button.classList.add("expandButton");
+//   dates.classList.add("date");
+
+//   // article.appendChild();
+//   article.appendChild(banana.title);
+//   article.appendChild(banana.date);
+//   article.appendChild(banana.firstParagraph);
+//   article.appendChild(banana.secondParagraph);
+//   article.appendChild(banana.thirdParagraph);
+//   article.appendChild(banana.button);
+
+//   title.textContent = banana.title;
+//   date.textContent = banana.date;
+//   firstParagraph.textContent = banana.firstParagraph;
+//   secondParagraph.textContent = banana.secondParagraph;
+//   thirdParagraph.textContent = banana.thirdParagraph;
+//   button.textContent = "expand";
+
+//   button.addEventListener("click", () => {
+//     article.classList.toggle("article-open");
+//   });
+//   return article;
+// };
+
+// // let theList;
+// //   menus.forEach(item => {
+// //     theList = document.createElement("li");
+// //     theList.textContent = item;
+// //     list.append(theList);
+// //   });
+// // const theArtical;
+// //   banana.forEach(item => {
+// //     theArtical = document.createElement("artical")
+// //     theArtical.textContent = item;
+// // this is how it was, but becouse i have prettier so it's organize it for me
+
+// // const articles = document.querySelector('.articles');
+// // data.forEach(data =>{
+// //   articles.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+// // });
+
+// const articles = document.querySelector(".articles");
+// data.forEach(item => {
+//   articles.appendChild(
+//     createArticle(
+//       item.title,
+//       item.date,
+//       item.firstParagraph,
+//       item.secondParagraph,
+//       item.thirdParagraph
+//     )
+//   );
+// });
